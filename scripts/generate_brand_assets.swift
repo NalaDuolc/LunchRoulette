@@ -1,156 +1,183 @@
 import AppKit
+import SwiftUI
 
-struct Palette {
-    static let cream = NSColor(calibratedRed: 0.996, green: 0.949, blue: 0.882, alpha: 1)
-    static let ink = NSColor(calibratedRed: 0.161, green: 0.118, blue: 0.102, alpha: 1)
-    static let orange = NSColor(calibratedRed: 0.929, green: 0.361, blue: 0.200, alpha: 1)
-    static let orangeSoft = NSColor(calibratedRed: 0.976, green: 0.565, blue: 0.337, alpha: 1)
-    static let coral = NSColor(calibratedRed: 0.969, green: 0.760, blue: 0.670, alpha: 1)
+enum BrandPalette {
+    static let cream = Color(red: 0.996, green: 0.949, blue: 0.882)
+    static let ink = Color(red: 0.161, green: 0.118, blue: 0.102)
+    static let orange = Color(red: 0.929, green: 0.361, blue: 0.200)
+    static let orangeSoft = Color(red: 0.976, green: 0.565, blue: 0.337)
+    static let coral = Color(red: 0.969, green: 0.760, blue: 0.670)
 }
 
-func makeRoundedRectPath(in rect: CGRect, radius: CGFloat) -> NSBezierPath {
-    NSBezierPath(roundedRect: rect, xRadius: radius, yRadius: radius)
+struct AppIconView: View {
+    var body: some View {
+        ZStack {
+            LinearGradient(
+                colors: [BrandPalette.orangeSoft, BrandPalette.orange, BrandPalette.ink],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+
+            Circle()
+                .fill(.white.opacity(0.14))
+                .frame(width: 360, height: 360)
+                .offset(x: 180, y: -150)
+
+            BowlShape()
+                .stroke(.white, style: StrokeStyle(lineWidth: 46, lineCap: .round, lineJoin: .round))
+                .frame(width: 640, height: 360)
+                .offset(y: 120)
+
+            BowlRimShape()
+                .stroke(.white.opacity(0.95), style: StrokeStyle(lineWidth: 36, lineCap: .round))
+                .frame(width: 560, height: 140)
+                .offset(y: 12)
+
+            NoodlesShape()
+                .stroke(.white.opacity(0.88), style: StrokeStyle(lineWidth: 18, lineCap: .round, lineJoin: .round))
+                .frame(width: 340, height: 200)
+                .offset(x: -65, y: -34)
+
+            ChopsticksShape()
+                .stroke(.white, style: StrokeStyle(lineWidth: 28, lineCap: .round))
+                .frame(width: 240, height: 360)
+                .offset(x: 210, y: -130)
+
+            Circle()
+                .fill(BrandPalette.cream)
+                .frame(width: 120, height: 120)
+                .offset(x: -260, y: -200)
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 224, style: .continuous))
+    }
 }
 
-func renderPNG(size: CGFloat, hasAlpha: Bool, drawing: () -> Void, outputURL: URL) throws {
-    guard let bitmap = NSBitmapImageRep(
-        bitmapDataPlanes: nil,
-        pixelsWide: Int(size),
-        pixelsHigh: Int(size),
-        bitsPerSample: 8,
-        samplesPerPixel: hasAlpha ? 4 : 3,
-        hasAlpha: hasAlpha,
-        isPlanar: false,
-        colorSpaceName: .deviceRGB,
-        bytesPerRow: 0,
-        bitsPerPixel: 0
-    ) else {
-        throw NSError(domain: "assetgen", code: 1)
+struct LaunchBrandView: View {
+    var body: some View {
+        ZStack {
+            Circle()
+                .fill(
+                    LinearGradient(
+                        colors: [BrandPalette.coral, BrandPalette.orangeSoft, BrandPalette.orange],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+
+            BowlShape()
+                .stroke(.white, style: StrokeStyle(lineWidth: 28, lineCap: .round, lineJoin: .round))
+                .frame(width: 320, height: 190)
+                .offset(y: 58)
+
+            BowlRimShape()
+                .stroke(.white, style: StrokeStyle(lineWidth: 22, lineCap: .round))
+                .frame(width: 280, height: 90)
+                .offset(y: 6)
+
+            ChopsticksShape()
+                .stroke(.white, style: StrokeStyle(lineWidth: 18, lineCap: .round))
+                .frame(width: 130, height: 220)
+                .offset(x: 90, y: -74)
+        }
+        .padding(28)
+    }
+}
+
+struct BowlShape: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.move(to: CGPoint(x: rect.minX + rect.width * 0.04, y: rect.minY + rect.height * 0.70))
+        path.addCurve(
+            to: CGPoint(x: rect.midX, y: rect.maxY - rect.height * 0.02),
+            control1: CGPoint(x: rect.minX + rect.width * 0.06, y: rect.maxY - rect.height * 0.02),
+            control2: CGPoint(x: rect.midX - rect.width * 0.18, y: rect.maxY - rect.height * 0.04)
+        )
+        path.addCurve(
+            to: CGPoint(x: rect.maxX - rect.width * 0.04, y: rect.minY + rect.height * 0.70),
+            control1: CGPoint(x: rect.midX + rect.width * 0.18, y: rect.maxY - rect.height * 0.04),
+            control2: CGPoint(x: rect.maxX - rect.width * 0.06, y: rect.maxY - rect.height * 0.02)
+        )
+        return path
+    }
+}
+
+struct BowlRimShape: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.move(to: CGPoint(x: rect.minX + rect.width * 0.02, y: rect.midY))
+        path.addCurve(
+            to: CGPoint(x: rect.maxX - rect.width * 0.02, y: rect.midY),
+            control1: CGPoint(x: rect.minX + rect.width * 0.24, y: rect.midY - rect.height * 0.26),
+            control2: CGPoint(x: rect.maxX - rect.width * 0.24, y: rect.midY - rect.height * 0.26)
+        )
+        return path
+    }
+}
+
+struct NoodlesShape: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.move(to: CGPoint(x: rect.width * 0.12, y: rect.height * 0.18))
+        path.addCurve(
+            to: CGPoint(x: rect.width * 0.34, y: rect.height * 0.84),
+            control1: CGPoint(x: rect.width * 0.02, y: rect.height * 0.36),
+            control2: CGPoint(x: rect.width * 0.18, y: rect.height * 0.58)
+        )
+
+        path.move(to: CGPoint(x: rect.width * 0.46, y: rect.height * 0.08))
+        path.addCurve(
+            to: CGPoint(x: rect.width * 0.58, y: rect.height * 0.84),
+            control1: CGPoint(x: rect.width * 0.34, y: rect.height * 0.34),
+            control2: CGPoint(x: rect.width * 0.46, y: rect.height * 0.60)
+        )
+
+        path.move(to: CGPoint(x: rect.width * 0.72, y: rect.height * 0.18))
+        path.addCurve(
+            to: CGPoint(x: rect.width * 0.86, y: rect.height * 0.84),
+            control1: CGPoint(x: rect.width * 0.62, y: rect.height * 0.34),
+            control2: CGPoint(x: rect.width * 0.76, y: rect.height * 0.58)
+        )
+
+        return path
+    }
+}
+
+struct ChopsticksShape: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.move(to: CGPoint(x: rect.width * 0.44, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.width * 0.78, y: rect.maxY))
+
+        path.move(to: CGPoint(x: rect.width * 0.68, y: rect.height * 0.02))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        return path
+    }
+}
+
+@MainActor
+func pngData<Content: View>(for view: Content, size: CGFloat, opaque: Bool) throws -> Data {
+    let renderer = ImageRenderer(
+        content: view
+            .frame(width: size, height: size)
+    )
+    renderer.scale = 1
+    renderer.isOpaque = opaque
+    renderer.proposedSize = ProposedViewSize(width: size, height: size)
+
+    guard let image = renderer.nsImage,
+          let tiffData = image.tiffRepresentation,
+          let bitmap = NSBitmapImageRep(data: tiffData),
+          let pngData = bitmap.representation(using: .png, properties: [:]) else {
+        throw NSError(domain: "brand-assets", code: 1)
     }
 
-    bitmap.size = NSSize(width: size, height: size)
-    NSGraphicsContext.saveGraphicsState()
-    NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: bitmap)
-    drawing()
-    NSGraphicsContext.restoreGraphicsState()
+    return pngData
+}
 
-    guard let data = bitmap.representation(using: .png, properties: [:]) else {
-        throw NSError(domain: "assetgen", code: 2)
-    }
-
+@MainActor
+func writePNG<Content: View>(_ view: Content, size: CGFloat, opaque: Bool, outputURL: URL) throws {
+    let data = try pngData(for: view, size: size, opaque: opaque)
     try data.write(to: outputURL)
-}
-
-func drawIcon(size: CGFloat, outputURL: URL) throws {
-    try renderPNG(size: size, hasAlpha: false, drawing: {
-    let rect = CGRect(x: 0, y: 0, width: size, height: size)
-    let gradient = NSGradient(colors: [Palette.orangeSoft, Palette.orange, Palette.ink])!
-    gradient.draw(in: rect, angle: -35)
-
-    let glow = NSBezierPath(ovalIn: CGRect(x: size * 0.54, y: size * 0.53, width: size * 0.42, height: size * 0.42))
-    NSColor.white.withAlphaComponent(0.14).setFill()
-    glow.fill()
-
-    let bowlRect = CGRect(x: size * 0.19, y: size * 0.20, width: size * 0.62, height: size * 0.34)
-    let bowl = NSBezierPath()
-    bowl.move(to: CGPoint(x: bowlRect.minX, y: bowlRect.maxY))
-    bowl.curve(to: CGPoint(x: bowlRect.midX, y: bowlRect.minY),
-               controlPoint1: CGPoint(x: bowlRect.minX, y: bowlRect.minY + size * 0.02),
-               controlPoint2: CGPoint(x: bowlRect.midX - size * 0.08, y: bowlRect.minY))
-    bowl.curve(to: CGPoint(x: bowlRect.maxX, y: bowlRect.maxY),
-               controlPoint1: CGPoint(x: bowlRect.midX + size * 0.08, y: bowlRect.minY),
-               controlPoint2: CGPoint(x: bowlRect.maxX, y: bowlRect.minY + size * 0.02))
-    bowl.lineWidth = size * 0.045
-    NSColor.white.setStroke()
-    bowl.stroke()
-
-    let rim = NSBezierPath()
-    rim.move(to: CGPoint(x: size * 0.22, y: size * 0.44))
-    rim.curve(to: CGPoint(x: size * 0.78, y: size * 0.44),
-              controlPoint1: CGPoint(x: size * 0.36, y: size * 0.41),
-              controlPoint2: CGPoint(x: size * 0.64, y: size * 0.41))
-    rim.lineWidth = size * 0.035
-    rim.lineCapStyle = .round
-    NSColor.white.withAlphaComponent(0.95).setStroke()
-    rim.stroke()
-
-    let noodle = NSBezierPath()
-    noodle.move(to: CGPoint(x: size * 0.34, y: size * 0.58))
-    noodle.curve(to: CGPoint(x: size * 0.42, y: size * 0.46),
-                 controlPoint1: CGPoint(x: size * 0.31, y: size * 0.54),
-                 controlPoint2: CGPoint(x: size * 0.36, y: size * 0.49))
-    noodle.move(to: CGPoint(x: size * 0.46, y: size * 0.60))
-    noodle.curve(to: CGPoint(x: size * 0.52, y: size * 0.46),
-                 controlPoint1: CGPoint(x: size * 0.44, y: size * 0.55),
-                 controlPoint2: CGPoint(x: size * 0.48, y: size * 0.50))
-    noodle.move(to: CGPoint(x: size * 0.58, y: size * 0.58))
-    noodle.curve(to: CGPoint(x: size * 0.62, y: size * 0.46),
-                 controlPoint1: CGPoint(x: size * 0.56, y: size * 0.54),
-                 controlPoint2: CGPoint(x: size * 0.59, y: size * 0.49))
-    noodle.lineWidth = size * 0.018
-    noodle.lineCapStyle = .round
-    NSColor.white.withAlphaComponent(0.85).setStroke()
-    noodle.stroke()
-
-    let chopsticks = NSBezierPath()
-    chopsticks.move(to: CGPoint(x: size * 0.67, y: size * 0.78))
-    chopsticks.line(to: CGPoint(x: size * 0.78, y: size * 0.48))
-    chopsticks.move(to: CGPoint(x: size * 0.74, y: size * 0.79))
-    chopsticks.line(to: CGPoint(x: size * 0.84, y: size * 0.50))
-    chopsticks.lineWidth = size * 0.026
-    chopsticks.lineCapStyle = .round
-    NSColor.white.setStroke()
-    chopsticks.stroke()
-
-    let dot = NSBezierPath(ovalIn: CGRect(x: size * 0.18, y: size * 0.66, width: size * 0.12, height: size * 0.12))
-    Palette.cream.setFill()
-    dot.fill()
-    }, outputURL: outputURL)
-}
-
-func drawLaunchBrand(size: CGFloat, outputURL: URL) throws {
-    try renderPNG(size: size, hasAlpha: true, drawing: {
-    NSColor.clear.setFill()
-    CGRect(x: 0, y: 0, width: size, height: size).fill()
-
-    let badgeRect = CGRect(x: size * 0.09, y: size * 0.09, width: size * 0.82, height: size * 0.82)
-    let badge = NSBezierPath(ovalIn: badgeRect)
-    let gradient = NSGradient(colors: [Palette.coral, Palette.orangeSoft, Palette.orange])!
-    gradient.draw(in: badge, relativeCenterPosition: .zero)
-
-    let bowl = NSBezierPath()
-    bowl.move(to: CGPoint(x: size * 0.24, y: size * 0.36))
-    bowl.curve(to: CGPoint(x: size * 0.50, y: size * 0.22),
-               controlPoint1: CGPoint(x: size * 0.25, y: size * 0.23),
-               controlPoint2: CGPoint(x: size * 0.40, y: size * 0.17))
-    bowl.curve(to: CGPoint(x: size * 0.76, y: size * 0.36),
-               controlPoint1: CGPoint(x: size * 0.60, y: size * 0.17),
-               controlPoint2: CGPoint(x: size * 0.75, y: size * 0.23))
-    bowl.lineWidth = size * 0.055
-    bowl.lineCapStyle = .round
-    NSColor.white.setStroke()
-    bowl.stroke()
-
-    let rim = NSBezierPath()
-    rim.move(to: CGPoint(x: size * 0.26, y: size * 0.41))
-    rim.curve(to: CGPoint(x: size * 0.74, y: size * 0.41),
-              controlPoint1: CGPoint(x: size * 0.38, y: size * 0.37),
-              controlPoint2: CGPoint(x: size * 0.62, y: size * 0.37))
-    rim.lineWidth = size * 0.043
-    rim.lineCapStyle = .round
-    NSColor.white.setStroke()
-    rim.stroke()
-
-    let chopsticks = NSBezierPath()
-    chopsticks.move(to: CGPoint(x: size * 0.59, y: size * 0.79))
-    chopsticks.line(to: CGPoint(x: size * 0.70, y: size * 0.49))
-    chopsticks.move(to: CGPoint(x: size * 0.67, y: size * 0.80))
-    chopsticks.line(to: CGPoint(x: size * 0.78, y: size * 0.50))
-    chopsticks.lineWidth = size * 0.03
-    chopsticks.lineCapStyle = .round
-    NSColor.white.setStroke()
-    chopsticks.stroke()
-    }, outputURL: outputURL)
 }
 
 let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
@@ -178,8 +205,10 @@ let iconSpecs: [(String, CGFloat)] = [
     ("icon-1024.png", 1024)
 ]
 
-for (name, size) in iconSpecs {
-    try drawIcon(size: size, outputURL: appIconDir.appendingPathComponent(name))
-}
+try MainActor.assumeIsolated {
+    for (name, size) in iconSpecs {
+        try writePNG(AppIconView(), size: size, opaque: true, outputURL: appIconDir.appendingPathComponent(name))
+    }
 
-try drawLaunchBrand(size: 512, outputURL: launchDir.appendingPathComponent("launch-brand.png"))
+    try writePNG(LaunchBrandView(), size: 512, opaque: false, outputURL: launchDir.appendingPathComponent("launch-brand.png"))
+}
