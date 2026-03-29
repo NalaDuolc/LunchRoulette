@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FE73724127A3FB35EC6EE24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A11B48C5C22FA5196151A8 /* LaunchScreen.storyboard */; };
+		1BFB2FB300E17979D20B7D9D /* LunchRouletteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E570861980E17BED842EB4 /* LunchRouletteApp.swift */; };
+		24438FAD5B76F7AD8EB86890 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE4FFB2968BB3BB1FA5E589 /* AppTheme.swift */; };
+		4E0D42E1A8FFD91228310635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABC06540A1A3C43CB4E0BFBF /* Assets.xcassets */; };
+		83C58852A1AAAA9F3CADF7F4 /* ManageLunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0716BD6B19C87749965BD6FF /* ManageLunchView.swift */; };
+		8472719D3BE4DD831E2237E6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300507992AB18B36A78BC84 /* SettingsView.swift */; };
+		C26A0FC0C3683F9167150F16 /* LunchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EE5491951A8999B3F492F2 /* LunchStore.swift */; };
+		D15F66B52F449173CE3809D2 /* LunchOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2487FDE98DB9AB2BF45AC3A /* LunchOption.swift */; };
+		D43BA0657C75C4FBCEEB3BE4 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E6C5C59537B739AAF41A0 /* AppView.swift */; };
+		E172D518E1011F68A0C8BDE7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F090850ED51EDC652CE2F17 /* HomeView.swift */; };
+		F4958617C014497AFED9244B /* LunchFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDAA7AEA444CEEC5A8DE439 /* LunchFilters.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0716BD6B19C87749965BD6FF /* ManageLunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageLunchView.swift; sourceTree = "<group>"; };
+		34FA1CA1C129E8D3574527D1 /* LunchRoulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunchRoulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F090850ED51EDC652CE2F17 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4DFB871436329A46B7320A10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		839E6C5C59537B739AAF41A0 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		85A11B48C5C22FA5196151A8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8BDAA7AEA444CEEC5A8DE439 /* LunchFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchFilters.swift; sourceTree = "<group>"; };
+		A300507992AB18B36A78BC84 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		ABC06540A1A3C43CB4E0BFBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B6E570861980E17BED842EB4 /* LunchRouletteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchRouletteApp.swift; sourceTree = "<group>"; };
+		D2487FDE98DB9AB2BF45AC3A /* LunchOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchOption.swift; sourceTree = "<group>"; };
+		D5EE5491951A8999B3F492F2 /* LunchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchStore.swift; sourceTree = "<group>"; };
+		DEE4FFB2968BB3BB1FA5E589 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0265AD5B7F231A6AD32C4AE6 /* Manage */ = {
+			isa = PBXGroup;
+			children = (
+				0716BD6B19C87749965BD6FF /* ManageLunchView.swift */,
+			);
+			path = Manage;
+			sourceTree = "<group>";
+		};
+		50B8A72E083202A235246029 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				D323661C372EE1D92A1C639A /* Home */,
+				0265AD5B7F231A6AD32C4AE6 /* Manage */,
+				600637240E81C37F3F2184D7 /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		600637240E81C37F3F2184D7 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A300507992AB18B36A78BC84 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		8C2407662C4E0B15F322F23D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8BDAA7AEA444CEEC5A8DE439 /* LunchFilters.swift */,
+				D2487FDE98DB9AB2BF45AC3A /* LunchOption.swift */,
+				D5EE5491951A8999B3F492F2 /* LunchStore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9E51368586A975DE995635F7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ABC06540A1A3C43CB4E0BFBF /* Assets.xcassets */,
+				4DFB871436329A46B7320A10 /* Info.plist */,
+				85A11B48C5C22FA5196151A8 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A09C629884B60D90AF0625B4 /* LunchRouletteApp */ = {
+			isa = PBXGroup;
+			children = (
+				A6BA2D65D7D92EA70F196024 /* App */,
+				C4F13A60F942E2DF5E479282 /* DesignSystem */,
+				50B8A72E083202A235246029 /* Features */,
+				8C2407662C4E0B15F322F23D /* Models */,
+				9E51368586A975DE995635F7 /* Resources */,
+			);
+			path = LunchRouletteApp;
+			sourceTree = "<group>";
+		};
+		A6BA2D65D7D92EA70F196024 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				839E6C5C59537B739AAF41A0 /* AppView.swift */,
+				B6E570861980E17BED842EB4 /* LunchRouletteApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B2921E74242B3D09DE24C2B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34FA1CA1C129E8D3574527D1 /* LunchRoulette.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBF7A33B663999AF5CECC088 = {
+			isa = PBXGroup;
+			children = (
+				A09C629884B60D90AF0625B4 /* LunchRouletteApp */,
+				B2921E74242B3D09DE24C2B1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C4F13A60F942E2DF5E479282 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				DEE4FFB2968BB3BB1FA5E589 /* AppTheme.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		D323661C372EE1D92A1C639A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3F090850ED51EDC652CE2F17 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B2F6FDC94277114528F666A6 /* LunchRoulette */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2394A4265429AB6DE279F048 /* Build configuration list for PBXNativeTarget "LunchRoulette" */;
+			buildPhases = (
+				72041BBC78D8F7ECE66A0371 /* Sources */,
+				38EC194686BE7AC7317602E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LunchRoulette;
+			packageProductDependencies = (
+			);
+			productName = LunchRoulette;
+			productReference = 34FA1CA1C129E8D3574527D1 /* LunchRoulette.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2D4B261E5EF5C9FA043C9426 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					B2F6FDC94277114528F666A6 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9D628D2B89F3A08EB3ACAE54 /* Build configuration list for PBXProject "LunchRoulette" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = BBF7A33B663999AF5CECC088;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B2921E74242B3D09DE24C2B1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B2F6FDC94277114528F666A6 /* LunchRoulette */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		38EC194686BE7AC7317602E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E0D42E1A8FFD91228310635 /* Assets.xcassets in Resources */,
+				0FE73724127A3FB35EC6EE24 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		72041BBC78D8F7ECE66A0371 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24438FAD5B76F7AD8EB86890 /* AppTheme.swift in Sources */,
+				D43BA0657C75C4FBCEEB3BE4 /* AppView.swift in Sources */,
+				E172D518E1011F68A0C8BDE7 /* HomeView.swift in Sources */,
+				F4958617C014497AFED9244B /* LunchFilters.swift in Sources */,
+				D15F66B52F449173CE3809D2 /* LunchOption.swift in Sources */,
+				1BFB2FB300E17979D20B7D9D /* LunchRouletteApp.swift in Sources */,
+				C26A0FC0C3683F9167150F16 /* LunchStore.swift in Sources */,
+				83C58852A1AAAA9F3CADF7F4 /* ManageLunchView.swift in Sources */,
+				8472719D3BE4DD831E2237E6 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0650C39B5D77712C8060DE3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = TW825SXQLK;
+				INFOPLIST_FILE = LunchRouletteApp/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "午餐轉盤";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		76D810A17A3488BC54E12AC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = TW825SXQLK;
+				INFOPLIST_FILE = LunchRouletteApp/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "午餐轉盤";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7ADBD68ADB1775918F7051E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 69YTT8J6WB;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gnauh.LunchRoulette;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E44FEB4DE469395C6091B6A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 69YTT8J6WB;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gnauh.LunchRoulette;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2394A4265429AB6DE279F048 /* Build configuration list for PBXNativeTarget "LunchRoulette" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76D810A17A3488BC54E12AC6 /* Debug */,
+				0650C39B5D77712C8060DE3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9D628D2B89F3A08EB3ACAE54 /* Build configuration list for PBXProject "LunchRoulette" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7ADBD68ADB1775918F7051E4 /* Debug */,
+				E44FEB4DE469395C6091B6A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2D4B261E5EF5C9FA043C9426 /* Project object */;
+}
