@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>午餐轉盤 支援</title>
+  <style>
+    :root {
+      --bg: #faf3eb;
+      --paper: rgba(255, 255, 255, 0.84);
+      --ink: #251f1b;
+      --muted: #675e56;
+      --accent: #f07b37;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang TC", sans-serif;
+      background: linear-gradient(180deg, #f8eadc 0%, var(--bg) 100%);
+      color: var(--ink);
+    }
+    .wrap {
+      width: min(860px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 64px;
+    }
+    .paper {
+      padding: 32px;
+      border-radius: 28px;
+      background: var(--paper);
+      border: 1px solid rgba(255,255,255,0.75);
+      box-shadow: 0 22px 60px rgba(24, 16, 12, 0.07);
+    }
+    a { color: var(--accent); }
+    h1 { margin: 0 0 8px; font-size: clamp(2rem, 5vw, 3.5rem); }
+    h2 { margin-top: 28px; font-size: 1.15rem; }
+    p, li { line-height: 1.8; color: var(--muted); }
+    ul { padding-left: 20px; }
+    .nav { margin-bottom: 18px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="nav"><a href="./index.html">返回首頁</a></div>
+    <section class="paper">
+      <h1>午餐轉盤 支援</h1>
+      <p>若你在使用「午餐轉盤」時遇到問題，或想提供功能建議，歡迎用以下方式聯絡。</p>
+
+      <h2>聯絡方式</h2>
+      <ul>
+        <li>Email：<a href="mailto:alancloud@gmail.com">alancloud@gmail.com</a></li>
+        <li>建議主旨：<code>午餐轉盤支援</code></li>
+      </ul>
+
+      <h2>來信時建議提供</h2>
+      <ul>
+        <li>iPhone 型號與 iOS 版本</li>
+        <li>你看到的問題或錯誤畫面</li>
+        <li>問題發生的大致步驟</li>
+      </ul>
+
+      <h2>目前版本說明</h2>
+      <p>目前版本沒有登入、付款或雲端同步功能。午餐清單、收藏與最近紀錄主要保存在裝置本地端。</p>
+
+      <h2>隱私權政策</h2>
+      <p>你也可以前往 <a href="./privacy.html">隱私權政策頁面</a> 了解本 App 目前版本的資料保存方式。</p>
+    </section>
+  </main>
+</body>
+</html>

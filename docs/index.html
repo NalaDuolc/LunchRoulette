@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>午餐轉盤</title>
+  <style>
+    :root {
+      --bg: #f8eadc;
+      --bg-soft: #fff8ef;
+      --card: rgba(255, 255, 255, 0.78);
+      --ink: #251f1b;
+      --muted: #6b625a;
+      --accent: #f07b37;
+      --line: rgba(37, 31, 27, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang TC", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at bottom left, rgba(240, 123, 55, 0.10), transparent 26%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+    }
+
+    .wrap {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+
+    .hero {
+      padding: 40px;
+      border-radius: 32px;
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 22px 60px rgba(24, 16, 12, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 0.95;
+    }
+
+    .sub {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 640px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .button.primary {
+      color: #fff;
+      background: var(--ink);
+    }
+
+    .button.secondary {
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .card {
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      box-shadow: 0 18px 40px rgba(24, 16, 12, 0.05);
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .footer {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1>午餐轉盤</h1>
+      <p class="sub">一個為台灣午餐選擇困難而設計的 iOS App。建立自己的常吃清單、設定今天的條件，然後快速抽出「今天中午就吃這個」。</p>
+      <div class="actions">
+        <a class="button primary" href="./privacy.html">隱私權政策</a>
+        <a class="button secondary" href="./support.html">支援與聯絡</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>這個 App 做什麼</h2>
+        <p>午餐轉盤幫你把午餐選擇整理成自己的名單，再依據地點、預算、類型與是否外送快速給出建議，減少每天中午的選擇疲勞。</p>
+      </article>
+      <article class="card">
+        <h2>目前版本特性</h2>
+        <p>目前版本沒有帳號系統，使用者建立的午餐清單、收藏、最近紀錄與篩選條件都儲存在裝置本地端。</p>
+      </article>
+      <article class="card">
+        <h2>聯絡方式</h2>
+        <p>若你對 App 功能、錯誤回報或隱私內容有疑問，請前往支援頁面聯絡開發者。</p>
+      </article>
+    </section>
+
+    <p class="footer">Copyright © 2026 Alan Huang. All rights reserved.</p>
+  </main>
+</body>
+</html>

@@ -12,14 +12,14 @@ func makeRoundedRectPath(in rect: CGRect, radius: CGFloat) -> NSBezierPath {
     NSBezierPath(roundedRect: rect, xRadius: radius, yRadius: radius)
 }
 
-func renderPNG(size: CGFloat, drawing: () -> Void, outputURL: URL) throws {
+func renderPNG(size: CGFloat, hasAlpha: Bool, drawing: () -> Void, outputURL: URL) throws {
     guard let bitmap = NSBitmapImageRep(
         bitmapDataPlanes: nil,
         pixelsWide: Int(size),
         pixelsHigh: Int(size),
         bitsPerSample: 8,
-        samplesPerPixel: 4,
-        hasAlpha: true,
+        samplesPerPixel: hasAlpha ? 4 : 3,
+        hasAlpha: hasAlpha,
         isPlanar: false,
         colorSpaceName: .deviceRGB,
         bytesPerRow: 0,
@@ -42,13 +42,10 @@ func renderPNG(size: CGFloat, drawing: () -> Void, outputURL: URL) throws {
 }
 
 func drawIcon(size: CGFloat, outputURL: URL) throws {
-    try renderPNG(size: size, drawing: {
+    try renderPNG(size: size, hasAlpha: false, drawing: {
     let rect = CGRect(x: 0, y: 0, width: size, height: size)
-    let bg = makeRoundedRectPath(in: rect, radius: size * 0.225)
-    bg.addClip()
-
     let gradient = NSGradient(colors: [Palette.orangeSoft, Palette.orange, Palette.ink])!
-    gradient.draw(in: bg, angle: -35)
+    gradient.draw(in: rect, angle: -35)
 
     let glow = NSBezierPath(ovalIn: CGRect(x: size * 0.54, y: size * 0.53, width: size * 0.42, height: size * 0.42))
     NSColor.white.withAlphaComponent(0.14).setFill()
@@ -112,7 +109,7 @@ func drawIcon(size: CGFloat, outputURL: URL) throws {
 }
 
 func drawLaunchBrand(size: CGFloat, outputURL: URL) throws {
-    try renderPNG(size: size, drawing: {
+    try renderPNG(size: size, hasAlpha: true, drawing: {
     NSColor.clear.setFill()
     CGRect(x: 0, y: 0, width: size, height: size).fill()
 

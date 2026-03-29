@@ -10,6 +10,7 @@
 		0FE73724127A3FB35EC6EE24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A11B48C5C22FA5196151A8 /* LaunchScreen.storyboard */; };
 		1BFB2FB300E17979D20B7D9D /* LunchRouletteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E570861980E17BED842EB4 /* LunchRouletteApp.swift */; };
 		24438FAD5B76F7AD8EB86890 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE4FFB2968BB3BB1FA5E589 /* AppTheme.swift */; };
+		38729988F674EE11D7F6C210 /* AppStoreScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E085CE56E06B76917224E69 /* AppStoreScreenshotView.swift */; };
 		4E0D42E1A8FFD91228310635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABC06540A1A3C43CB4E0BFBF /* Assets.xcassets */; };
 		83C58852A1AAAA9F3CADF7F4 /* ManageLunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0716BD6B19C87749965BD6FF /* ManageLunchView.swift */; };
 		8472719D3BE4DD831E2237E6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300507992AB18B36A78BC84 /* SettingsView.swift */; };
@@ -22,9 +23,10 @@
 
 /* Begin PBXFileReference section */
 		0716BD6B19C87749965BD6FF /* ManageLunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageLunchView.swift; sourceTree = "<group>"; };
-		34FA1CA1C129E8D3574527D1 /* LunchRoulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunchRoulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34FA1CA1C129E8D3574527D1 /* LunchRoulette.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = LunchRoulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F090850ED51EDC652CE2F17 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4DFB871436329A46B7320A10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7E085CE56E06B76917224E69 /* AppStoreScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreScreenshotView.swift; sourceTree = "<group>"; };
 		839E6C5C59537B739AAF41A0 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		85A11B48C5C22FA5196151A8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BDAA7AEA444CEEC5A8DE439 /* LunchFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchFilters.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			children = (
 				D323661C372EE1D92A1C639A /* Home */,
 				0265AD5B7F231A6AD32C4AE6 /* Manage */,
+				FAA45973CE8E16F555385A90 /* Screenshots */,
 				600637240E81C37F3F2184D7 /* Settings */,
 			);
 			path = Features;
@@ -136,6 +139,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		FAA45973CE8E16F555385A90 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				7E085CE56E06B76917224E69 /* AppStoreScreenshotView.swift */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,6 +178,7 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					B2F6FDC94277114528F666A6 = {
+						DevelopmentTeam = 69YTT8J6WB;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -207,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38729988F674EE11D7F6C210 /* AppStoreScreenshotView.swift in Sources */,
 				24438FAD5B76F7AD8EB86890 /* AppTheme.swift in Sources */,
 				D43BA0657C75C4FBCEEB3BE4 /* AppView.swift in Sources */,
 				E172D518E1011F68A0C8BDE7 /* HomeView.swift in Sources */,
@@ -228,19 +241,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = TW825SXQLK;
 				INFOPLIST_FILE = LunchRouletteApp/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "午餐轉盤";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -250,19 +263,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = TW825SXQLK;
 				INFOPLIST_FILE = LunchRouletteApp/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "午餐轉盤";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
