@@ -1,41 +1,53 @@
 # 午餐轉盤
 
-一個用 SwiftUI 打造的 iOS 午餐決策 App MVP，目標是幫在台灣的使用者快速決定今天中午吃什麼。
+午餐轉盤是一個用 SwiftUI 開發的 iOS App，想解決的問題很單純：每天中午到了，常常不是沒東西吃，而是不知道要吃什麼。
 
-## 這版已完成
+這個專案目前先聚焦在「快速做決定」這件事，讓使用者可以整理自己的常吃清單，再用預算、地點、類型和外送條件縮小範圍，最後抽出今天的午餐。
 
-- 隨機抽出今日午餐
-- 台灣常見午餐類型與價格帶
-- 依地點、預算、類型、外送條件篩選
-- 避免最近幾天吃過的重複選項
-- 可新增與刪除自己的午餐清單
-- 支援收藏與「不想吃這個」快速重抽
-- 使用 `UserDefaults` 保留午餐選項、篩選條件與最近紀錄
-- 具備 App Icon、Launch Screen、設定頁與基本版本資訊
+## 目前功能
+
+- 隨機決定今天午餐吃什麼
+- 支援台灣常見午餐類型與價格帶
+- 可依地點、預算、類型與是否外送篩選
+- 避免短時間內重複抽到最近吃過的選項
+- 可新增、刪除與管理自己的午餐清單
+- 支援收藏常吃選項
+- 支援「不想吃這個」後立即重抽
+- 使用 `UserDefaults` 儲存午餐選項、篩選條件與最近紀錄
 
 ## 專案結構
 
-- `project.yml`: XcodeGen 專案規格
-- `LunchRouletteApp/App`: App 入口與 Tab 結構
-- `LunchRouletteApp/Models`: 午餐資料模型、篩選條件、狀態儲存
-- `LunchRouletteApp/Features/Home`: 今日午餐主畫面
-- `LunchRouletteApp/Features/Manage`: 午餐清單管理畫面
-- `LunchRouletteApp/Features/Settings`: 設定與上架前資訊骨架
-- `docs/PRIVACY_POLICY_DRAFT.md`: 隱私權政策草稿
-- `docs/APP_STORE_COPY_DRAFT.md`: App Store 文案草稿
+- `project.yml`：XcodeGen 專案設定
+- `LunchRouletteApp/App`：App 入口與主要導覽
+- `LunchRouletteApp/Models`：資料模型與本地儲存
+- `LunchRouletteApp/Features/Home`：首頁與午餐抽選流程
+- `LunchRouletteApp/Features/Manage`：午餐清單管理
+- `LunchRouletteApp/Features/Settings`：設定、版本資訊與上架相關內容
+- `LunchRouletteApp/Resources`：資產、Icon、Launch Screen
+- `docs`：隱私權政策、支援頁與上架文案草稿
+- `scripts`：圖資與 App Store 截圖生成腳本
 
-## 如何開啟
+## 開發環境
 
-這個環境目前沒有啟用完整 Xcode，所以我先用 XcodeGen 規格幫你把專案骨架建好。
+- Xcode 16 以上
+- XcodeGen
 
-1. 安裝 Xcode 與 XcodeGen
-2. 在此資料夾執行 `xcodegen generate`
+## 如何執行
+
+1. 安裝 `XcodeGen`
+2. 在專案根目錄執行 `xcodegen generate`
 3. 開啟 `LunchRoulette.xcodeproj`
-4. 選擇 iPhone 模擬器後執行
+4. 選擇模擬器或實機後執行
 
-## 下一步建議
+## 文件與上架相關頁面
 
-- 接上地圖或定位，依附近店家推薦
-- 支援雨天模式與外送平台偏好
-- 加入「今天不想吃這個」快速重抽
-- 用 SwiftData 取代 `UserDefaults`
+- 隱私權政策：`docs/privacy.html`
+- 支援頁：`docs/support.html`
+- App Store 文案草稿：`docs/APP_STORE_COPY_DRAFT.md`
+
+## 後續可以再做的方向
+
+- 串接地圖或定位，提供附近餐點建議
+- 支援更多情境篩選，例如雨天、想吃清淡、想喝湯
+- 加入店家資訊、導航與收藏分類
+- 改用 SwiftData 管理本地資料
