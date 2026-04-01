@@ -1,6 +1,11 @@
 import SwiftUI
 
 struct ManageLunchView: View {
+    private enum Field: Hashable {
+        case name
+        case notes
+    }
+
     let store: LunchStore
 
     @State private var newName = ""
@@ -9,6 +14,7 @@ struct ManageLunchView: View {
     @State private var selectedArea: LunchArea = .office
     @State private var isDeliveryFriendly = false
     @State private var notes = ""
+    @FocusState private var focusedField: Field?
 
     var body: some View {
         ZStack {
@@ -21,6 +27,7 @@ struct ManageLunchView: View {
                         Text("新增午餐選項")
                             .font(.headline)
                         TextField("例如：排骨便當", text: $newName)
+                            .focused($focusedField, equals: .name)
                         Picker("類型", selection: $selectedCategory) {
                             ForEach(LunchCategory.allCases) { category in
                                 Text(category.rawValue).tag(category)
@@ -38,23 +45,7 @@ struct ManageLunchView: View {
                         }
                         Toggle("可外送", isOn: $isDeliveryFriendly)
                         TextField("備註，例如：排隊快、湯很讚", text: $notes, axis: .vertical)
-
-                        Button("加入清單") {
-                            store.addOption(
-                                name: newName,
-                                category: selectedCategory,
-                                priceTier: selectedPriceTier,
-                                area: selectedArea,
-                                isDeliveryFriendly: isDeliveryFriendly,
-                                notes: notes
-                            )
-                            resetForm()
-                        }
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .foregroundStyle(.white)
-                        .padding(.vertical, 12)
-                        .background(AppTheme.ink)
-                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                            .focused($focusedField, equals: .notes)
                     }
                     .listRowBackground(Color.white.opacity(0.82))
                 }
@@ -96,8 +87,40 @@ struct ManageLunchView: View {
                 }
             }
             .scrollContentBackground(.hidden)
+            .scrollDismissesKeyboard(.interactively)
         }
         .navigationTitle("午餐清單")
+        .safeAreaInset(edge: .bottom) {
+            VStack(spacing: 0) {
+                Divider()
+                    .opacity(0.15)
+
+                Button(action: submitNewLunch) {
+                    Text("加入清單")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 14)
+                }
+                .buttonStyle(.plain)
+                .foregroundStyle(.white)
+                .background(canSubmit ? AppTheme.ink : AppTheme.ink.opacity(0.4))
+                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .disabled(!canSubmit)
+                .contentShape(Rectangle())
+                .padding(.horizontal, 16)
+                .padding(.top, 12)
+                .padding(.bottom, 12)
+            }
+            .background(.ultraThinMaterial)
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("完成") {
+                    focusedField = nil
+                }
+            }
+        }
     }
 
     private func resetForm() {
@@ -107,6 +130,25 @@ struct ManageLunchView: View {
         selectedArea = .office
         isDeliveryFriendly = false
         notes = ""
+    }
+
+    private var canSubmit: Bool {
+        !newName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
+    private func submitNewLunch() {
+        guard canSubmit else { return }
+
+        focusedField = nil
+        store.addOption(
+            name: newName,
+            category: selectedCategory,
+            priceTier: selectedPriceTier,
+            area: selectedArea,
+            isDeliveryFriendly: isDeliveryFriendly,
+            notes: notes
+        )
+        resetForm()
     }
 }
 
