@@ -14,6 +14,7 @@
 		4E0D42E1A8FFD91228310635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABC06540A1A3C43CB4E0BFBF /* Assets.xcassets */; };
 		83C58852A1AAAA9F3CADF7F4 /* ManageLunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0716BD6B19C87749965BD6FF /* ManageLunchView.swift */; };
 		8472719D3BE4DD831E2237E6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300507992AB18B36A78BC84 /* SettingsView.swift */; };
+		92FC836449E8BC6303864269 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFBAB513F839B3ED8A55703A /* GoogleService-Info.plist */; };
 		C26A0FC0C3683F9167150F16 /* LunchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EE5491951A8999B3F492F2 /* LunchStore.swift */; };
 		D15F66B52F449173CE3809D2 /* LunchOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2487FDE98DB9AB2BF45AC3A /* LunchOption.swift */; };
 		D43BA0657C75C4FBCEEB3BE4 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E6C5C59537B739AAF41A0 /* AppView.swift */; };
@@ -36,6 +37,7 @@
 		D2487FDE98DB9AB2BF45AC3A /* LunchOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchOption.swift; sourceTree = "<group>"; };
 		D5EE5491951A8999B3F492F2 /* LunchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchStore.swift; sourceTree = "<group>"; };
 		DEE4FFB2968BB3BB1FA5E589 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		FFBAB513F839B3ED8A55703A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				ABC06540A1A3C43CB4E0BFBF /* Assets.xcassets */,
+				FFBAB513F839B3ED8A55703A /* GoogleService-Info.plist */,
 				4DFB871436329A46B7320A10 /* Info.plist */,
 				85A11B48C5C22FA5196151A8 /* LaunchScreen.storyboard */,
 			);
@@ -178,7 +181,7 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					B2F6FDC94277114528F666A6 = {
-						DevelopmentTeam = 69YTT8J6WB;
+						DevelopmentTeam = TW825SXQLK;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -208,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E0D42E1A8FFD91228310635 /* Assets.xcassets in Resources */,
+				92FC836449E8BC6303864269 /* GoogleService-Info.plist in Resources */,
 				0FE73724127A3FB35EC6EE24 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,9 +318,9 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 69YTT8J6WB;
+				DEVELOPMENT_TEAM = TW825SXQLK;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -382,9 +386,9 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 69YTT8J6WB;
+				DEVELOPMENT_TEAM = TW825SXQLK;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
